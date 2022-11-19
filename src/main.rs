@@ -301,11 +301,16 @@ impl State {
                         VirtualKeyCode::Key4 if pressed => {
                             self.cursor_manager.set_place_type(ComponentType::Switch);
                         }
-                        VirtualKeyCode::E if pressed => {
+                        VirtualKeyCode::F if pressed => {
                             //TODO more intuitive controls?
                             self.circuit.interact(self.viewport.cursor().tile())
                         }
-                        VirtualKeyCode::R if pressed => {
+                        VirtualKeyCode::Q if pressed => {
+                            self.cursor_manager.set_place_orientation(
+                                self.cursor_manager.place_orientation().left(),
+                            );
+                        }
+                        VirtualKeyCode::E if pressed => {
                             self.cursor_manager.set_place_orientation(
                                 self.cursor_manager.place_orientation().right(),
                             );
